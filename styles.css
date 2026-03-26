@@ -739,22 +739,59 @@ section {
     top: 100%;
     left: 0;
     width: 100%;
-    background: var(--bg-secondary);
-    padding: 24px;
+    background: rgba(10, 10, 10, 0.98);
+    padding: 20px 24px;
     flex-direction: column;
+    align-items: flex-start;
     border-bottom: 1px solid var(--border-glass);
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
   }
   
   .nav-links.active {
     display: flex;
   }
+
+  .nav-link {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 1.15rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-link::after {
+    display: none;
+  }
+  
+  .lang-switch {
+    width: 100%;
+    margin-top: 10px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .lang-switch a {
+    background: var(--bg-glass);
+    border: 1px solid var(--border-glass);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
   
   .mobile-menu-btn {
     display: block;
+    z-index: 1001;
   }
 
   .advantages-grid, .details-grid, .footer-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .hero {
+    padding-top: 120px;
   }
   
   .hero-text h1 {
@@ -763,10 +800,40 @@ section {
   
   .hero-3d {
     height: 350px;
+    margin-top: -20px;
   }
   
   .footer-bottom {
     flex-direction: column;
     gap: 16px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 50px;
+  }
+
+  .accordion-header {
+    padding: 20px;
+    font-size: 1.05rem;
+  }
+  
+  .accordion-content {
+    padding: 0 20px 20px 20px; /* removed big indent on mobile to fit text better */
+  }
+  
+  .accordion-title {
+    gap: 12px;
+  }
+
+  .fab-container {
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  .fab-main {
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
   }
 }
