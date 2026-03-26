@@ -707,6 +707,39 @@ section {
   transform: translateY(0);
 }
 
+/* Split section with photos */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.split-image {
+  position: relative;
+}
+
+.split-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px var(--accent-glow);
+  border: 1px solid var(--border-glass);
+  object-fit: cover;
+  display: block;
+}
+
+.advantages-grid-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Ensure FAB doesn't overlap text on right side container */
+.split-content.safe-right {
+  padding-right: 60px;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .hero-content {
@@ -722,6 +755,19 @@ section {
     margin: 0 auto 40px;
   }
   
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .split-image {
+    order: -1; /* Image always on top on mobile */
+  }
+  
+  .split-content.safe-right {
+    padding-right: 0;
+  }
+
   .advantages-grid, .details-grid, .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
